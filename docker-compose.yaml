@@ -1,0 +1,22 @@
+version: "3"
+services:
+  database:
+    image: mysql-db-57
+    container_name: dba-mysql
+    hostname: local.mysql
+    tty: true
+    env_file:
+      - ./docker/envs/mysql.env
+    ports:
+      - 3306:3036
+    environment:
+      MYSQL_ROOT_PASSWORD: Root#Password
+    volumes:
+      - ./docker/volume/mysql:/var/lib/mysql
+      - ./docker/volume/scripts:/app/scripts
+    networks:
+      - dba
+
+networks:
+  dba:
+    driver: bridge
