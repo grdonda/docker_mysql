@@ -54,32 +54,40 @@ O docker, através do recurso de Volume, permite que seus arquivos persistam ao 
 ```
 Esta pasta corresponde a pasta que será carregada dentro do container /app/sql que esta definida no arquivo docker-compose.yaml como "working_dir".
 
-# Requisitos que utilizei
+# Requisitos
+Baseado na minhas necessidades, a instalação que realizei e que descrevo abaixo como requisitos, engloba usar o linux e não o Hyper-v por padrão, contudo, os itens marcados com + são necessários:
 
-* windows 10 build > 2004  
+* **Virtualização via Bios +**
+* **Adicionais do windows: Hyper-v +**
+* Adicionais do windows: Windows subsystem linux
+* Windows 10 build > 2004
 * Win wsl 2
-* Virtualização via Bios
-* docker desktop
-* 2/4 gb de ram 
-* HD com 40gb
-* vscode + plugin docker
+* **Git +**
+* **Docker Desktop ( instalação default ) +**
+* Visual studio code + plugin docker   
+  _(para o gerenciamento visual do docker)_
 
-# Instalação deste projeto
+# Dicas para instalação
 Para instalar este projeto, é necessário ter instalado antes:
 * git  
 https://git-scm.com/download/win
 * Docker Desktop  
 https://www.docker.com/products/docker-desktop
 
-Tendo instalado os programas acima no padrão "next,next,finish", confirme se o ambiente está ok da seguinte forma:
+Tendo instalado os programas acima no padrão "next, next, finish", confirme se o **ambiente está ok** da seguinte forma:
 
-1. Abre o Windows Termina, ou Git Bash, ou o CMD, etc..
+1. Abre o **Windows Terminal**, ou **Git Bash**, ou o **CMD**, etc..
 2. Execute o comando:  
-git --version  
-O resultado depois de instalado, deve ser algo como: 
+**git --version** para ver o resultado, deve ser algo como: 
 ```
 c:\ git --version
 git version 2.28.0.windows.1
+```
+
+Agora, execute o comando para o docker:  
+```
+c:\ docker --version
+Docker version 19.03.3, build 2355349d-
 ```
 
 Confirmando a instalação do git, crie uma pasta "projeto" (ou como desejar) em C:\ , ou onde preferir, e execute o comando:
@@ -104,5 +112,6 @@ Consulte os link e referencias para melhor entendimento !!!
 
 ## Links para download
 * Docker Desktop: https://www.docker.com/products/docker-desktop
+* Wsl 2: https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel
 * Visual Studio Code: https://code.visualstudio.com/download
 * Visual Studio Code - Docker plugin: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
