@@ -1,24 +1,40 @@
-# Docker - Ambiente MySQL para estudos  
-
-utilizado o Docker como plataforma para obter as imagens do MySQL de acordo com as necessidades do estudo. v5.7 e v8.  
-
-Pasta scripts com a trajetoria de estudos SQL para MySQL.  
 
 
-# Considerações  
 
-Dentro do ambiente a pasta /app será montada com a pasta scripts
-A pasta /app será o working_dir   
+# Docker 
+Alguns comandos que podem ajudar
+
+### Entrando no container para usar o shell
+* docker exec -it dba_mysql bash <
+
+### Listando imagens instaladas
+* docker image list  
+
+### limpeza entre ligar/desligar os containers
+* docker network prune --force  
+* docker image prune --force  
+* docker volume prune --force  
+
+### iniciando o container
+* docker-compose -f "docker-compose.yaml" up -d --build --remove-orphans  
+
+### desligando o container
+* docker-compose down --remove-orphans  
+
+### persistência de dados
+/sql
 
 
-Crio a imagem do mysql de uma imagem original.
-Essa "copia" ficará disponivel no meu Hub para meus estudos em determinada versão do programa. p.e.: v5.7 e v8.0  
+## Requisitos que utilizei
 
-# Subindo a aplicação em docker
+* windows 10 build > 2004  
+* Win wsl 2
+* Virtualização via Bios
+* docker desktop
+* 2/4 gb de ram 
+* HD com 40gb
+* vscode + plugin docker
 
-```
-$ docker-compose up -f "./docker-compose.yaml" --remove-orphans
-```
-```
-$ docker-compose down --remove-orphans
-```
+Referências:
+* https://docs.microsoft.com/pt-br/virtualization/windowscontainers/manage-docker/configure-docker-daemon  
+* https://docs.docker.com/docker-for-windows/install/  
