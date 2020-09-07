@@ -2,9 +2,12 @@
 # MySQL/Docker
 Este projeto visa usar o mysql através do docker para que se possa treinar os comandos SQL, Administrar o Banco de dados, Gerenciar usuário e etc.  
 
-## Gerenciamento por docker-compose.yaml
-Este arquivo de configuração do docker, especifica o é necessário para que a imagem do MySQL v5.7 possa ser carregada no container.
-A partir do mesmo diretorio do arquivo, pode-se execcutar o comando para "ligar" o container.  
+É interresante que possuoa algum programa visual para acessar o banco de dados, por exemplo, DBeaver ou Navicat, ou qualquer outro programa que prefira utilizar.  
+
+
+## Arquivo docker-compose.yaml
+Este arquivo de configuração do docker, especifica o que seránecessário para que a imagem do MySQL v5.7 possa ser carregada via container.
+A partir do mesmo diretório deste arquivo, pode-se execcutar o comando para "ligar" o container.  
 ```
 docker-compose -f "docker-compose.yaml" up -d --build --remove-orphans
 ```
@@ -60,6 +63,39 @@ Esta pasta corresponde a pasta que será carregada dentro do container /app/sql 
 * 2/4 gb de ram 
 * HD com 40gb
 * vscode + plugin docker
+
+# Instalação deste projeto
+Para instalar este projeto, é necessário ter instalado antes:
+* git  
+https://git-scm.com/download/win
+* Docker Desktop  
+https://www.docker.com/products/docker-desktop
+
+Tendo instalado os programas acima no padrão "next,next,finish", confirme se o ambiente está ok da seguinte forma:
+
+1. Abre o Windows Termina, ou Git Bash, ou o CMD, etc..
+2. Execute o comando:  
+git --version  
+O resultado depois de instalado, deve ser algo como: 
+```
+c:\ git --version
+git version 2.28.0.windows.1
+```
+
+Confirmando a instalação do git, crie uma pasta "projeto" (ou como desejar) em C:\ , ou onde preferir, e execute o comando:
+
+```
+C:\projeto\ git clone https://github.com/grdonda/docker_mysql.git
+```
+Será criada uma pasta dentro da pasta projetos com o nome docker_mysql e dentro dela com os arquivos do projeto.
+
+Para que o container possa ser "ligado", dentro da pasta docker_mysql execute o comando:  
+```
+docker-compose -f "docker-compose.yaml" up -d --build --remove-orphans
+```
+Agora utilizando o visual studio code, será possivel acessar via plugin do docker, gerenciamento visual do container.  
+
+Consulte os link e referencias para melhor entendimento !!!
 
 ## Referências:
 * https://docs.microsoft.com/pt-br/virtualization/windowscontainers/manage-docker/configure-docker-daemon  
