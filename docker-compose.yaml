@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mysql:
+    container_name: dba_mysql
+    hostname: local.dba_mysql
+
+    image: mysql:5.7
+
+    tty: true
+    env_file:
+      - ./docker/env/mysql.env
+
+    working_dir: /app/sql
+
+    volumes:
+      - ./docker/volume/mysql:/var/lib/mysql
+      - ./sql:/app/sql
