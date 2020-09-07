@@ -5,7 +5,7 @@
 Alguns comandos que podem ajudar
 
 ### Entrando no container para usar o shell
-* docker exec -it dba_mysql bash <
+* docker exec -it dba_mysql bash
 
 ### Listando imagens instaladas
 * docker image list  
