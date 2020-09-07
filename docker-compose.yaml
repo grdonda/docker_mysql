@@ -12,6 +12,9 @@ services:
 
     working_dir: /app/sql
 
+    ports:
+      - 3306:3306
+
     volumes:
       - ./docker/volume/mysql:/var/lib/mysql
       - ./sql:/app/sql
