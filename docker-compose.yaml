@@ -3,18 +3,20 @@ services:
   mysql:
     container_name: dba_mysql
     hostname: local.dba_mysql
-
-    image: mysql:5.7
-
+    image: bitnami/mysql:latest
     tty: true
     env_file:
       - ./docker/env/mysql.env
-
     working_dir: /app/sql
-
     ports:
       - 3306:3306
-
     volumes:
       - ./docker/volume/mysql:/var/lib/mysql
       - ./sql:/app/sql
+      - ./docker/default:/docker-entrypoint-initdb.d
+    networks:
+      - dsi_server
+
+networks:
+  dsi_server:
+    driver: bridge
